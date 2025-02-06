@@ -1,16 +1,40 @@
+import random
+
 
 class Fighter:
     domain = []
-    def __init__(self, nickname: str, sign: int):
+    def __init__(self, nickname: str, pouvoirs):
         self.nickname = nickname
-        self.sign = sign
+        self.sign = pouvoirs
         self.domain.append(self)
 
     def clash(self, other: "Fighter")-> "Fighter":
-        if self.sign * other.sign <= 0:
-            return self
-        else: 
-            return other
+
+        resultats = []
+        for p in self.sign:
+            print(p)
+            for pp in other.sign:
+                print(pp)
+                result = abs(p[2+0] - pp[2+2]) + \
+                abs(p[2+1] - pp[2+0]) + \
+                abs(p[2+2] - pp[2+1]) - \
+                abs(pp[2+0] - p[2+2]) - \
+                abs(pp[2+1] - p[2+0]) - \
+                abs(pp[2+2] - p[2+1])
+                resultats.append(result)# ; duel(self, other)
+        
+        
+        resultats.sort(key=abs)
+        score = sum(resultats[:min(3, len(resultats))])
+        
+        if score > 0:
+            winner = self
+        elif score < 0:
+            winner = other
+        else:
+            winner = self if random.randint(0, 1) == 0 else other
+        
+        return winner
     
     def __str__(self) -> str:
         return f"{self.nickname}"
@@ -31,3 +55,16 @@ class Fighter:
                 winners.append(fighters[-1])
             return Fighter._tournament(winners)
 
+
+def duel(fighter1, fighter2) -> str:
+    if fighter1 not in fighters or fighter2 not in fighters:
+        return "Un des combattants n'est pas valide."
+    
+    score1, score2 = fighters[fighter1], fighters[fighter2]
+    
+    if score1 > score2:
+        return f"{fighter1} remporte le duel !"
+    elif score2 > score1:
+        return f"{fighter2} remporte le duel !"
+    else:
+        return "Match nul !"

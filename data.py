@@ -1,32 +1,32 @@
-fighters = [("Théo Connétable", 0),\
-            ("Yvann", 1),\
-            ("Kevin", 0),\
-            ("Logan", 1),\
-            ("Enzo", -1),\
-            ("Andrien", 1),\
-            ("Noah", 1),\
-            ("Tommy", 1),\
-            ("Baptiste Monnier", 1),\
-            ("Elyne", 0),\
-            ("Baptiste Griva", 1),\
-            ("Luc-Anthony", 1),\
-            ("David", -1),\
-            ("Mathis", 1),\
-            ("Tom", 0),\
-            ("Nathan", 1),\
-            ("Simon", -1),\
-            ("Théo Balzeau", 0),\
-            ("Morgan", -1),\
-            ("Emilien", 0),\
-            ("Tarik", -1),\
-            ("Lucas", 0),\
-            ("Maxent", 0),\
-            ("Martin", 0),\
-            ("Antoine", -1),\
-            ("Paul", 1),\
-            ("Emre", 1),\
-            ("Théo Matrod", 0),\
-            ("Alexandre", 0),\
-            ("Gor", 0),\
-            ("Julien", 1),\
-            ("Samuel", 1)]
+fighters = [( "Théo Connetable", [("GOAT", "Procure à son possesseur des pouvoirs considèrables", 20, 20, 20)]),
+            ("Yvann", [("Cheveux Cheloux", "Procure à son possesseur des pouvoirs magiques considèrables", 0, 0, 10)]),
+            ("Kevin", [("Golem", "Procure à son processeur une force physique considèrable", 10, 0, 0)]),
+            ("Logan", [("Japonais", "Procure à son possesseur des connaissances illimitées sur le hentai", 0, 3, 7)]),
+            ("Enzo", [("Sex Machine", "Procure à son possesseur une énergie sexuelle infinie", 5, 5, 0)]),
+            ("Andrien", [("Enfant remplit d'aigreur", "Son aigreur éternelle le rend très menaçant malgré sa petite taille d'enfant, qui lui offre tout de même une agilité conséquente", 5, 10, 0)]),
+            ("Noah", [("Amoureux du code", "Procure à son possesseur un amour infinie pour le dev (au delà des limites)", 5, 0, 9)]),
+            ("Tommy", [("Dale", "Procure à son possesseur un faim insatiable pour la gente féminine", 1, 8, 5), ("Infomaniak", "Procure à son possesseur de l'argent", 5, 5, 5)]),
+            ("Baptiste Monnier", [("Langage charmeur", "Procure à son possesseur le pouvoir d'envouter les personne sans handicape auditif", 0, 0, 10)]),
+            ("Elyne", [("Femme", "Procure à son possesseur une grande agilité pour fuir les charos", 0, 7, 3)]),
+            ("Baptiste Griva", [("Infomaniak", "Procure à son possesseur de l'argent", 5, 5, 5)]),
+            ("Luc-Anthony", [("Absent", "Ce pouvoir n'est d'aucune utilité à son possesseur", 0, 100, 0)]),
+            ("David", [("Le meilleur enseignant", "Son possesseur met que des bonne notes", 10, 10, 10)]),
+            ("Mathis", [("Le meilleur élève", "Son possesseur est un génie", 8, 8, 8)]),
+            ("Tom", [("Mage Noir", "Le plus grand mage noir ayant jamais existé", 0, 0, 100)]),
+            ("Nathan", [("Voiture de luxe", "Sa société fleurissante lui permet de s'offrir des belles voitures en frais de société", 0, 0, 0)]),
+            ("Simon", [("Assurance vie", "Son assurance vie bien remplie lui assure de belles funérailles", 0, 50, 0)]),
+            ("Théo Balzeau", [("Patron de MakeProps", "Juste le boss en fait", 20, 20, 0), ("Chinophone", "Dis des choses qu'on ne comprend pas", 0, 15, 15)]),
+            ("Morgan", [("Passion de lait", "Il est passionné par le lait", 25, 8, 8)]),
+            ("Emilien", [("Jurassien", "Homme des montagnes, très fort", 35, 8, 0)]),
+            ("Tarik", [("Veste permanente", "Le fait de porter sa veste fétiche le rend hyper mystérieux", 8, 8, 45)]),
+            ("Lucas", [("Feuille de présence", "A tout moment, il peut noter son adversaire comme absent et lui retirer sa paie, pas sympa", 1, 10, 1)]),
+            ("Maxent", [("Vélo électrique", "Son super deux roues lui permet d'ateindre des vitesse ahurissante", 100, 0, 0)]),
+            ("Martin", [("Héraut de l'arcane", "Passant d'être humain maladif à un être entièrement biomécanique, Martin a adopté sa glorieuse évolution et est devenu une sorte de messie pour ses adeptes.", -50, -50, 250)]),
+            ("Antoine", [("Famille de vigneron", "Son possesseur peut alcooliser son adversaire avec ses vins de qualités", 2, 7, 9)]),
+            ("Paul", [("Magnétisme", "Etre magnétique, il est le point de convergence des lignes de champ magnétique ", 42, 0, 42)]),
+            ("Emre", [("Erudit de la foi", "Le pouvoir de distinguer ce qui est halal à ce qui est haram.", 7, 7, 17)]),
+            ("Théo Matrod", [("Karatekaka", "Utilise les arcanes du ninjutsu pour casser en deux son adversaire", 20, 20, 0)]),
+            ("Alexandre", [("BossBoss le Boss", "Est dôté d'une aigreur sans pareil", 25, 25, 25)]),
+            ("Gor", [("Gor", "Gor être Gor", 1000, -500, 0)]),
+            ("Julien", [("Pacifiste", "Il ne veut pas se battre", 0, 0, 0)]),
+            ("Samuel", [("Américain", "Que dire de plus, c'est un américain", 8, 8, 0)] )]
