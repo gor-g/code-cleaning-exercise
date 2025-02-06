@@ -7,7 +7,7 @@ class Fighter:
         self.domain.append(self)
 
     def clash(self, other: "Fighter")-> "Fighter":
-        if self.sign * other.sign > 0:
+        if self.sign * other.sign <= 0:
             return self
         else: 
             return other
