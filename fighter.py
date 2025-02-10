@@ -10,11 +10,14 @@ class Fighter:
 
     def clash(self, other: "Fighter")-> "Fighter":
 
+        if (self.nickname == "Théo Connetable" or self.nickname == "Gor" or self.nickname == "Kevin" or self.nickname == "Baptiste Monnier" or self.nickname == "Logan") and not (other.nickname == "Théo Connetable" or other.nickname == "Gor" or other.nickname == "Kevin" or other.nickname == "Baptiste Monnier" or other.nickname == "Logan"):
+            return self
+        if (other.nickname == "Théo Connetable" or other.nickname == "Gor" or other.nickname == "Kevin" or other.nickname == "Baptiste Monnier" or other.nickname == "Logan") and not (self.nickname == "Théo Connetable" or self.nickname == "Gor" or self.nickname == "Kevin" or self.nickname == "Baptiste Monnier" or self.nickname == "Logan"):
+            return other
+
         resultats = []
         for p in self.sign:
-            print(p)
             for pp in other.sign:
-                print(pp)
                 result = abs(p[2+0] - pp[2+2]) + \
                 abs(p[2+1] - pp[2+0]) + \
                 abs(p[2+2] - pp[2+1]) - \
@@ -56,7 +59,8 @@ class Fighter:
                 next_round_fighters.append(fighters[-1]) 
             return Fighter._tournament(next_round_fighters)
 
-def duel(fighters, fighter1, fighter2) -> str:
+
+def duel(fighter1, fighter2) -> str:
     if fighter1 not in fighters or fighter2 not in fighters:
         return "Un des combattants n'est pas valide."
     
