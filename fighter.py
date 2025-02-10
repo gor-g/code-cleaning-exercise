@@ -1,10 +1,10 @@
 
 class Fighter:
-    domain = []
+    fighter_registry = []
     def __init__(self, nickname: str, sign: int):
         self.nickname = nickname
         self.sign = sign
-        self.domain.append(self)
+        self.fighter_registry.append(self)
 
     def clash(self, other: "Fighter")-> "Fighter":
         if self.sign * other.sign <= 0:
@@ -16,18 +16,17 @@ class Fighter:
         return f"{self.nickname}"
 
     @classmethod
-    def tournament(cls):
-        return cls._tournament(cls.domain)
+    def tournament(cls)-> "Fighter":
+        return cls._tournament(cls.fighter_registry)
 
     @staticmethod
-    def _tournament(fighters: list["Fighter"]):
+    def _tournament(fighters: list["Fighter"])->"Fighter":
         if len(fighters) == 1:
             return fighters[0]
         else:
-            winners = []
+            next_round_fighters = []
             for i in range(0, len(fighters) - 1, 2):
-                winners.append(fighters[i].clash(fighters[i + 1]))
+                next_round_fighters.append(fighters[i].clash(fighters[i + 1]))
             if len(fighters) % 2 != 0:
-                winners.append(fighters[-1])
-            return Fighter._tournament(winners)
-
+                next_round_fighters.append(fighters[-1]) # automatically pass the fighter that doesn't have an opponent
+            return Fighter._tournament(next_round_fighters)
