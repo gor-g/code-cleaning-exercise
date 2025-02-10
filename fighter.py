@@ -21,7 +21,7 @@ class Fighter:
                 abs(pp[2+0] - p[2+2]) - \
                 abs(pp[2+1] - p[2+0]) - \
                 abs(pp[2+2] - p[2+1])
-                resultats.append(result)# ; duel(self, other)
+                resultats.append(result)#; duel(self.fighter_registry, self, other)
         
         
         resultats.sort(key=abs)
@@ -52,10 +52,11 @@ class Fighter:
             for i in range(0, len(fighters) - 1, 2):
                 next_round_fighters.append(fighters[i].clash(fighters[i + 1]))
             if len(fighters) % 2 != 0:
-                next_round_fighters.append(fighters[-1]) # automatically pass the fighter that doesn't have an opponent
+                # automatically pass the fighter that doesn't have an opponent
+                next_round_fighters.append(fighters[-1]) 
             return Fighter._tournament(next_round_fighters)
 
-def duel(fighter1, fighter2) -> str:
+def duel(fighters, fighter1, fighter2) -> str:
     if fighter1 not in fighters or fighter2 not in fighters:
         return "Un des combattants n'est pas valide."
     
