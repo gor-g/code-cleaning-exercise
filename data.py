@@ -30,3 +30,5 @@ fighters = [( "Théo Connetable", [("GOAT", "Procure à son possesseur des pouvo
             ("Gor", [("Gor", "Gor être Gor", 1000, -500, 0)]),
             ("Julien", [("Pacifiste", "Il ne veut pas se battre", 0, 0, 0)]),
             ("Samuel", [("Américain", "Que dire de plus, c'est un américain", 8, 8, 0)] )]
+
+cheaters = ["Gor", "Théo Connetable", "Kevin", "Logan", "Baptiste Monnier"]

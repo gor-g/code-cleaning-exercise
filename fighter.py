@@ -1,46 +1,35 @@
 import random
-
+from power import Power
 
 class Fighter:
     fighter_registry = []
-    def __init__(self, nickname: str, pouvoirs):
+    def __init__(self, nickname: str, powers:list[Power], is_cheater:bool = False):
         self.nickname = nickname
-        self.sign = pouvoirs
+        self.powers = powers
+        self.is_cheater = is_cheater
         self.fighter_registry.append(self)
 
     def clash(self, other: "Fighter")-> "Fighter":
-
-        if (self.nickname == "Théo Connetable" or self.nickname == "Gor" or self.nickname == "Kevin" or self.nickname == "Baptiste Monnier" or self.nickname == "Logan") and not (other.nickname == "Théo Connetable" or other.nickname == "Gor" or other.nickname == "Kevin" or other.nickname == "Baptiste Monnier" or other.nickname == "Logan"):
-            return self
-        if (other.nickname == "Théo Connetable" or other.nickname == "Gor" or other.nickname == "Kevin" or other.nickname == "Baptiste Monnier" or other.nickname == "Logan") and not (self.nickname == "Théo Connetable" or self.nickname == "Gor" or self.nickname == "Kevin" or self.nickname == "Baptiste Monnier" or self.nickname == "Logan"):
-            return other
-
-        resultats = []
-        for p in self.sign:
-            for pp in other.sign:
-                result = abs(p[2+0] - pp[2+2]) + \
-                abs(p[2+1] - pp[2+0]) + \
-                abs(p[2+2] - pp[2+1]) - \
-                abs(pp[2+0] - p[2+2]) - \
-                abs(pp[2+1] - p[2+0]) - \
-                abs(pp[2+2] - p[2+1])
-                resultats.append(result)#; duel(self.fighter_registry, self, other)
-        
-        
-        resultats.sort(key=abs)
-        score = sum(resultats[:min(3, len(resultats))])
-        
-        if score > 0:
+        if self.is_cheater and not other.is_cheater:
             winner = self
-        elif score < 0:
+        elif other.is_cheater and not self.is_cheater:
+            winner = other
+        else:
+            winner = self._clash(other)
+        return winner
+    
+    def _clash(self, other: "Fighter")-> "Fighter":
+        final_score = Power.get_3_closest_clashes_result(self.powers, other.powers)
+        if final_score > 0:
+            winner = self
+        elif final_score < 0:
             winner = other
         else:
             winner = self if random.randint(0, 1) == 0 else other
-        
         return winner
-    
+
     def __str__(self) -> str:
-        return f"{self.nickname}"
+        return self.nickname
 
     @classmethod
     def tournament(cls)-> "Fighter":
@@ -58,17 +47,3 @@ class Fighter:
                 # automatically pass the fighter that doesn't have an opponent
                 next_round_fighters.append(fighters[-1]) 
             return Fighter._tournament(next_round_fighters)
-
-
-def duel(fighter1, fighter2) -> str:
-    if fighter1 not in fighters or fighter2 not in fighters:
-        return "Un des combattants n'est pas valide."
-    
-    score1, score2 = fighters[fighter1], fighters[fighter2]
-    
-    if score1 > score2:
-        return f"{fighter1} remporte le duel !"
-    elif score2 > score1:
-        return f"{fighter2} remporte le duel !"
-    else:
-        return "Match nul !"
